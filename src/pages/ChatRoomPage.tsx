@@ -302,7 +302,7 @@ export default function ChatRoomPage() {
       <div className="flex flex-col h-screen md:h-[90vh] w-full bg-card md:w-[60vw] md:max-w-[1000px] md:aspect-[4/3] md:rounded-xl md:shadow-lg md:overflow-hidden">
       
       {/* Header */}
-      <header className="border-b border-border p-4 flex items-center justify-between bg-card">
+      <header className="border-b border-border p-4 flex items-center justify-between bg-card sticky top-0 z-10">
         <div>
           <img src="/logo.svg" alt="RVNZCOMM" className="w-8 h-8 ml-4 block" />
         </div>
@@ -384,7 +384,7 @@ export default function ChatRoomPage() {
       </div>
 
       {/* Input */}
-      <div className="border-t border-border px-4 pt-4 pb-12 bg-card">
+      <div className="border-t border-border p-4 bg-card">
         <div className="flex gap-2">
           <input
             type="text"
