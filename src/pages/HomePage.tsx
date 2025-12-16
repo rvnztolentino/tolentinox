@@ -29,7 +29,7 @@ export default function HomePage() {
           <img src="/logo.svg" alt="RVNZCOMM" className="w-28 h-28 block" />
         </div>
 
-        <h1 className="text-4xl font-bold mb-4">TolentinoX</h1>
+        <h1 className="text-4xl font-bold mb-4">Welcome</h1>
         
         <p className="text-md text-black/60 mb-2">
           Private messaging for approved members only

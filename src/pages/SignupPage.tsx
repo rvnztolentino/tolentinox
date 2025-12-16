@@ -99,7 +99,7 @@ export default function SignupPage() {
         <div className="text-center">
           <h1 className="text-3xl font-bold">Welcome</h1>
           <p className="mt-2 text-sm text-black/60">
-            Family messaging for approved members only
+            Messaging for approved members only
           </p>
         </div>
 

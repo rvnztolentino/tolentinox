@@ -384,7 +384,7 @@ export default function ChatRoomPage() {
       </div>
 
       {/* Input */}
-      <div className="border-t border-border p-4 bg-card">
+      <div className="border-t border-border px-4 pt-4 pb-12 bg-card">
         <div className="flex gap-2">
           <input
             type="text"
@@ -407,7 +407,7 @@ export default function ChatRoomPage() {
           </Button>
         </div>
         <p className="text-xs text-muted-foreground mt-2">
-          Press Enter to send, Shift+Enter for new line
+          Press Enter to send
         </p>
       </div>
 
