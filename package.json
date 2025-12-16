@@ -7,6 +7,7 @@
     "dev": "vite",
     "backend": "tsx watch src/backend/index.ts",
     "build": "tsc -b && vite build",
+    "start": "node src/backend/index.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

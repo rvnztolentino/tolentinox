@@ -22,6 +22,10 @@ interface UserSocket {
 // Store connected users
 const connectedUsers = new Map<string, UserSocket>();
 
+app.get('/', (req, res) => {
+  res.send('Welcome to rvnzcomm backend server.');
+});
+
 io.on('connection', (socket) => {
   console.log('User connected:', socket.id);
 
