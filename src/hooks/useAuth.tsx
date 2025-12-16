@@ -351,10 +351,18 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const signOut = async () => {
     // Optimistically update state so UI doesn't get stuck
     setState({ user: null, loading: false, error: null });
+
     try {
-      await supabase.auth.signOut();
-    } catch {
-      // No-op; state already reflects signed out
+      // Always clear local session so refresh/open won't restore a stale token
+      await supabase.auth.signOut({ scope: 'local' });
+
+      // Attempt global revoke (optional) but don't block UX on failure
+      const { error } = await supabase.auth.signOut({ scope: 'global' });
+      if (error) {
+        console.error('Supabase signOut (global) error:', error);
+      }
+    } catch (err) {
+      console.error('Supabase signOut error:', err);
     }
   };
 
