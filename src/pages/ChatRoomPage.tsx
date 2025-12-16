@@ -6,7 +6,7 @@ import { useAuth } from '@/hooks/useAuth';
 import type { Message } from '@/types';
 import supabase from '@/services/supabaseClient';
 import { Button } from '@/components/ui/button';
-import { Send } from 'lucide-react';
+import { Send, RefreshCw } from 'lucide-react';
 
 // Helper function to convert URLs in text to clickable links
 const renderMessageWithLinks = (text: string) => {
@@ -204,6 +204,14 @@ export default function ChatRoomPage() {
     }
   };
 
+  const handleRefresh = () => {
+    try {
+      window.location.reload();
+    } catch (err) {
+      console.error('Failed to refresh page', err);
+    }
+  };
+
   const handleLogout = async () => {
     await signOut();
     navigate('/login');
@@ -391,6 +399,9 @@ export default function ChatRoomPage() {
             placeholder="Type a message..."
             className="flex-1 px-4 py-2 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-ring"
           />
+          <Button onClick={handleRefresh} variant="ghost" title="Refresh" aria-label="Refresh page">
+            <RefreshCw size={16} />
+          </Button>
           <Button onClick={handleSendMessage} disabled={!newMessage.trim()}>
             <Send size={16} />
           </Button>
