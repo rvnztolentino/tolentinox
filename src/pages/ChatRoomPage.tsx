@@ -298,8 +298,8 @@ export default function ChatRoomPage() {
   const effectiveProfile = profile ?? user;
 
   return (
-    <div className="min-h-screen bg-white text-black/90 font-inter flex justify-center items-start md:items-center">
-      <div className="flex flex-col h-screen md:h-[90vh] w-full bg-card md:w-[60vw] md:max-w-[1000px] md:aspect-[4/3] md:rounded-xl md:shadow-lg md:overflow-hidden">
+    <div className="min-h-screen bg-white text-black/90 font-inter flex justify-center items-center md:items-center">
+      <div className="flex flex-col h-[80vh] md:h-[90vh] w-[90vw] md:w-[60vw] max-w-[1000px] bg-card aspect-[4/3] rounded-xl shadow-lg overflow-hidden">
       
       {/* Header */}
       <header className="border-b border-border p-4 flex items-center justify-between bg-card sticky top-0 z-10">
@@ -385,7 +385,7 @@ export default function ChatRoomPage() {
 
       {/* Input */}
       <div className="border-t border-border p-4 bg-card">
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <input
             type="text"
             value={newMessage}
@@ -397,12 +397,12 @@ export default function ChatRoomPage() {
               }
             }}
             placeholder="Type a message..."
-            className="flex-1 px-4 py-2 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+            className="min-w-0 flex-1 px-4 md:px-4 py-2 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-ring"
           />
-          <Button onClick={handleRefresh} variant="ghost" title="Refresh" aria-label="Refresh page">
+          <Button className="flex-none" onClick={handleRefresh} variant="ghost" title="Refresh" aria-label="Refresh page">
             <RefreshCw size={16} />
           </Button>
-          <Button onClick={handleSendMessage} disabled={!newMessage.trim()}>
+          <Button className="flex-none" onClick={handleSendMessage} disabled={!newMessage.trim()}>
             <Send size={16} />
           </Button>
         </div>
